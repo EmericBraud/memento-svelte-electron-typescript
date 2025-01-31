@@ -5,6 +5,14 @@
   import MainWithTitlebar from "./Components/MainWithTitlebar.svelte";
 
   export let name: string;
+  let file;
+  function handleFileSelect(event) {
+    const selectedFile = event.target.files[0];
+    if (selectedFile) {
+      file = selectedFile;
+      console.log("Fichier sélectionné :", file.name);
+    }
+  }
 </script>
 
 <svelte:head>
@@ -13,25 +21,20 @@
 
 <MainWithTitlebar title="MEMENTO - Svelte + Electron">
   <section class="text-center space-y-6">
-    <h1>Hello {name}!</h1>
-    <p>
-      Visit the <a
-        href="https://svelte.dev/tutorial"
-        class="btn-orange hover:no-underline">Svelte tutorial</a
-      > to learn how to build Svelte apps.
-    </p>
-    <p>
-      Visit the <a
-        href="https://github.com/el3um4s/memento-svelte-electron-typescript"
-        class="btn-orange hover:no-underline">Repository</a
-      > to view the source code.
-    </p>
-    <Version />
-    <InfoElectron />
+    <button onclick="">
+      Create a fresh project
+    </button>
   </section>
 </MainWithTitlebar>
 
 <style>
+  button{
+    font-weight: bolder;
+    font-size: larger;
+    background-color: rgb(151, 232, 159);
+    border-radius: 10px;
+    padding: 10px;
+  }
   p {
     @apply m-1;
   }

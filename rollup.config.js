@@ -50,6 +50,9 @@ export default {
 			compilerOptions: {
 				// enable run-time checks when not in production
 				dev: !production
+			},
+			kit: {
+				routes: "src/frontend/routes"
 			}
 		}),
 		// To be able to import css files inside svelte `<script>`
